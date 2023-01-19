@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<!-- For IE -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- For Resposive Device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- For Window Tab Color -->
+		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#061948">
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#061948">
+		<!-- iOS Safari -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="#061948">
+		<title>WORKTAB</title>
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+		<!-- Main style sheet -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<!-- responsive style sheet -->
+		<link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+
+		<style>
+			
+
+body {
+  background: linear-gradient(to left, white 20%, #000f32 100%);
+  font-size: 12px;
+}
+
+body, button, input {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.background {
+  display: flex;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 0 1 700px;
+  margin: auto;
+  padding: 10px;
+}
+
+.screen {
+  position: relative;
+  background: black;
+  border-radius: 15px;
+}
+
+.screen:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+  z-index: -1;
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #4d4d4f;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.screen-header-left {
+  margin-right: auto;
+}
+
+.screen-header-button {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-radius: 8px;
+  background: white;
+}
+
+.screen-header-button.close {
+  background: #ed1c6f;
+}
+
+.screen-header-button.maximize {
+  background: #e8e925;
+}
+
+.screen-header-button.minimize {
+  background: #74c54f;
+}
+
+.screen-header-right {
+  display: flex;
+}
+
+.screen-header-ellipsis {
+  width: 3px;
+  height: 3px;
+  margin-left: 2px;
+  border-radius: 8px;
+  background: #999;
+}
+
+.screen-body {
+  display: flex;
+}
+
+.screen-body-item {
+  flex: 1;
+  padding: 50px;
+}
+
+.screen-body-item.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #ea1d6f;
+  font-size: 26px;
+}
+
+.app-title:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 25px;
+  height: 4px;
+  background: #ea1d6f;
+}
+
+.app-contact {
+  margin-top: auto;
+  font-size: 8px;
+  color: #888;
+}
+
+.app-form-group {
+  margin-bottom: 15px;
+}
+
+.app-form-group.message {
+  margin-top: 40px;
+}
+
+.app-form-group.buttons {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.app-form-control {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  color: #ddd;
+  font-size: 14px;
+  text-transform: uppercase;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.app-form-control::placeholder {
+  color: #666;
+}
+
+.app-form-control:focus {
+  border-bottom-color: #ddd;
+}
+
+.app-form-button {
+  border: black;
+  border-radius: 10px;
+
+  background: none;
+  display: inline;
+  border: none;
+  color: #ea1d6f;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.app-form-button:hover {
+  color: #b9134f;
+}
+
+
+
+.credits-link {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.dribbble {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 520px) {
+  .screen-body {
+    flex-direction: column;
+  }
+
+  .screen-body-item.left {
+    margin-bottom: 30px;
+  }
+
+  .app-title {
+    flex-direction: row;
+  }
+
+  .app-title span {
+    margin-right: 12px;
+  }
+
+  .app-title:after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .screen-body {
+    padding: 40px;
+  }
+
+  .screen-body-item {
+    padding: 0;
+  }
+}
+
+		</style>
+		<!-- Fix Internet Explorer ______________________________________-->
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="vendor/html5shiv.js"></script>
+			<script src="vendor/respond.js"></script>
+		<![endif]-->	
+	</head>
+
+	<body>
+		<div class="main-page-wrapper">
+
+			<!-- ===================================================
+				Loading Transition
+			==================================================== -->
+			<div id="loader-wrapper">
+				<div id="loader"></div>
+			</div>
+
+			<!-- 
+			=============================================
+				Theme Header One
+			============================================== 
+			-->
+			<header class="header-one">
+				<div class="top-header">
+					<div class="container clearfix">
+						<div class="logo float-left"><a href="index.html"><img src="images/role.png" alt=""></a></div>
+						<div class="address-wrapper float-right">
+
+							<ul>
+								<li class="address">
+									<input style="padding-top: 10px; padding-bottom: 10px; border-radius: 25px; text-align: center;"; type="text" placeholder="Search..">
+								</li>
+							</ul>
+
+							<!-- <ul>
+								<li class="address">
+									<i class="icon flaticon-placeholder"></i>
+									<h6>Address:</h6>
+									<p>2A0, Queenstown St, USA.</p>
+								</li>
+								<li class="address">
+									<i class="icon flaticon-multimedia"></i>
+									<h6>Mail us:</h6>
+									<p>supporthere@mail.com</p>
+								</li>
+								<li class="quotes"><a href="#">GET A QUOTES</a></li>
+							</ul> -->
+						</div> 
+					</div> <!-- /.container -->
+				</div> <!-- /.top-header -->
+			
+				<div class="theme-menu-wrapper">
+					<div class="container">
+						<div class="bg-wrapper clearfix">
+							<!-- ============== Menu Warpper ================ -->
+					   		<div class="menu-wrapper float-left">
+					   			<nav id="mega-menu-holder" class="clearfix">
+								   <ul class="clearfix">
+									<li class="active"><a href="index.html">Home</a>
+									    <li class="active"><a href="Create Job.html">Create Jobs</a>
+									    	<!-- <ul class="dropdown">
+									        	<li><a href="index.html">Home version one</a></li>
+									        	<li><a href="index-2.html">Home version two</a></li>
+									      </ul> -->
+									    </li>
+									    <li><a href="about.html">About Us</a>
+									    	<!-- <ul class="dropdown">
+									    		<li><a href="about.html">Create Jobs</a></li>
+									    		<li><a href="team.html">Abouts</a></li>
+									    		<li><a href="faq.html">Support</a></li>
+									    		<li><a href="404.html">404</a></li>
+									    		<li><a href="shop.html">Shop</a></li>
+									    		<li><a href="shop-details.html">Shop details</a></li>
+									            <li><a href="#">Third Level menu</a>
+									    			<ul>
+									    				<li><a href="#">Demo one</a></li>
+									    				<li><a href="#">Demo two</a></li>
+									    			</ul>
+									    		</li>
+									       </ul> -->
+									    </li>
+									    <li><a href="contact.html">Support</a>
+									    	<!-- <ul class="dropdown">
+									        	<li><a href="service.html">Service Version one</a></li>
+									        	<li><a href="service-v2.html">Service version two</a></li>
+									        	<li><a href="service-details.html">Service Details</a></li>
+									       </ul> -->
+									    </li>
+										<li><a href="signin.html">Sign in</a>
+									    	<!-- <ul class="dropdown">
+									        	<li><a href="service.html">Service Version one</a></li>
+									        	<li><a href="service-v2.html">Service version two</a></li>
+									        	<li><a href="service-details.html">Service Details</a></li>
+									       </ul> -->
+									    </li>
+									    <!-- <li><a href="#">Portfolio</a>
+									    	<ul class="dropdown">
+									        	<li><a href="project.html">project</a></li>
+									        	<li><a href="project-details.html">Project details</a></li>
+									       </ul>
+									    </li>
+									    <li><a href="#">Blog</a>
+									    	<ul class="dropdown">
+									        	<li><a href="blog.html">Blog List</a></li>
+									        	<li><a href="blog-grid.html">Blog Grid</a></li>
+									        	<li><a href="blog-details.html">Blog details</a></li>
+									       </ul>
+									    </li>
+									    <li><a href="contact.html">contact</a></li>
+								   </ul> -->
+								</nav> <!-- /#mega-menu-holder -->
+					   		</div> <!-- /.menu-wrapper -->
+
+					   		<!-- <div class="right-widget float-right">
+					   			<ul>
+					   				<li class="social-icon">
+					   					<ul>
+											<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+											<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+											<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+											<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+										</ul>
+					   				</li>
+					   				<li class="cart-icon">
+					   					<a href="#"><i class="flaticon-tool"></i> <span>2</span></a>
+					   				</li>
+					   				<li class="search-option">
+					   					<div class="dropdown">
+					   						<button type="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search" aria-hidden="true"></i></button>
+											<form action="#" class="dropdown-menu">
+												<input type="text" Placeholder="Enter Your Search">
+												<button><i class="fa fa-search"></i></button>
+											</form>
+					   					</div>
+					   				</li>
+					   			</ul>
+					   		</div>  -->
+						</div> <!-- /.bg-wrapper -->
+					</div> <!-- /.container -->
+				</div> <!-- /.theme-menu-wrapper -->
+			</header> <!-- /.header-one -->
+
+			
+  
+			<div class="container">
+				<div class="screen">
+			
+					<div class="screen-header-left">
+					 </div>
+					 </div>
+			 </div>
+					</div>
+				   
+					</div>
+				  </div>
+				  <div class="screen-body">
+					<div class="screen-body-item left">
+					  <div class="app-title">
+						<span>SUPPORT</span>
+					  </div>
+					</div>
+					<div class="screen-body-item">
+					  <div class="app-form">
+						<div class="app-form-group">
+						  <input class="app-form-control" placeholder="NAME" value="PERFECT BENJAMIN">
+						</div>
+						<div class="app-form-group">
+						  <input class="app-form-control" placeholder="EMAIL">
+						</div>
+						<div class="app-form-group">
+						  <input class="app-form-control" placeholder="CONTACT NO">
+						</div>
+						<div class="app-form-group message">
+						  <input class="app-form-control" placeholder="MESSAGE">
+						</div>
+						
+						  <button data-inline="true" class="app-form-button">CANCEL</button> <button data-inline="true" class="app-form-button">SEND</button>
+						  
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  
+			  </div>
+			</div>
+			
+
+
+			
+
+			<!--
+			=====================================================
+				Footer
+			=====================================================
+			-->
+			<footer class="theme-footer-one">
+				<div class="top-footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-3 col-lg-4 col-sm-6 about-widget">
+								<h6 class="title">About OUR Service</h6>
+								<p>Worktab began in 2023 by pioneering a better way of working, helping businesses find more flexibility and connecting talent with more opportunities.</p>
+								<div class="queries"><i class="flaticon-phone-call"></i> Any Queries : <a href="#">(+1) 234 567 900</a></div>
+							</div> <!-- /.about-widget -->
+							<div class="col-xl-4 col-lg-3 col-sm-6 footer-recent-post">
+								<h6 class="title">RECENT POSTS</h6>
+								<ul>
+									<li class="clearfix">
+										
+										<div class="post float-left">
+											<a href="#">Graphic Designer needed</a>
+											<div class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> Jan 06, 2023</div>
+										</div>
+									</li>
+									<li class="clearfix">
+									
+										<div class="post float-left">
+											<a href="#">Website Developer needed</a>
+											<div class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> Jan 10, 2023</div>
+										</div>
+									</li>
+								</ul>
+							</div> <!-- /.footer-recent-post -->
+							<div class="col-xl-2 col-lg-3 col-sm-6 footer-list">
+								<h6 class="title">SERVICES</h6>
+								<ul>
+									<li><a href="#">Web Design</a></li>
+									<li><a href="#">App Development</a></li>
+									<li><a href="#">Graphic Design</a></li>
+									<li><a href="#">Data Analysis</a></li>
+									<li><a href="#">UI/UX</a></li>
+									<li><a href="#">Backend Development</a></li>
+								</ul>
+							</div> <!-- /.footer-list -->
+							<div class="col-xl-3 col-lg-2 col-sm-6 footer-newsletter">
+								<h6 class="title">NEWSLETTER</h6>
+								<form action="#">
+									<input type="text" placeholder="Name *">
+									<input type="email" placeholder="Email *">
+									<button class="theme-button-one">SUBSCRIBE</button>
+								</form>
+							</div>
+						</div> <!-- /.row -->
+					</div> <!-- /.container -->
+				</div> <!-- /.top-footer -->
+				<div class="bottom-footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-12"><p>&copy; Copyrights 2023. All Rights Reserved.</p></div>
+							
+						</div>
+					</div>
+				</div> <!-- /.bottom-footer -->
+			</footer> <!-- /.theme-footer -->
+			
+
+	        
+
+	        <!-- Scroll Top Button -->
+			<button class="scroll-top tran3s">
+				<i class="fa fa-angle-up" aria-hidden="true"></i>
+			</button>
+			
+
+
+		<!-- Optional JavaScript _____________________________  -->
+
+    	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    	<!-- jQuery -->
+		<script src="vendor/jquery.2.2.3.min.js"></script>
+		<!-- Popper js -->
+		<script src="vendor/popper.js/popper.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	    <!-- menu  -->
+		<script src="vendor/menu/src/js/jquery.slimmenu.js"></script>
+
+		<!-- owl.carousel -->
+		<script src="vendor/owl-carousel/owl.carousel.min.js"></script>
+
+
+		<!-- Theme js -->
+		<script src="js/theme.js"></script>
+		</div> <!-- /.main-page-wrapper -->
+	</body>
+</html>
